@@ -18,7 +18,7 @@ import codecs
 
 def get_pie(item_name,item_name_list,item_num_list):
     totle = item_num_list[0]+item_num_list[1]+item_num_list[2]
-    subtitle = "共有:%d个好友"%totle
+    subtitle = "共有:%d个wx好友"%totle
 
     pie = Pie(item_name,page_title = item_name,title_text_size=30,title_pos='center',\
         subtitle = subtitle,subtitle_text_size = 25,width=800,height= 800)
@@ -31,7 +31,7 @@ def get_pie(item_name,item_name_list,item_num_list):
     pie.render(out_file_name)
 
 def get_bar(item_name,item_name_list,item_num_list):
-    subtitle = "zjk"
+    subtitle = "ガオー"
     bar = Bar(item_name,page_title = item_name,title_text_size=30,title_pos='center',\
         subtitle = subtitle,subtitle_text_size = 25)
     
@@ -46,7 +46,7 @@ def get_bar(item_name,item_name_list,item_num_list):
 
 
 def get_map(item_name,item_name_list,item_num_list):
-    subtitle = "zjk"
+    subtitle = "ガオー"
     _map = Map(item_name,width=1300,height= 800,title_pos='center',title_text_size=30,\
         subtitle = subtitle,subtitle_text_size = 25)
     _map.add("", item_name_list, item_num_list, maptype='china', is_visualmap=True, visual_text_color='#000')
@@ -196,14 +196,14 @@ if __name__ == '__main__':
 
     #性别
     name_list,num_list = dict2list(sex_counter)
-    get_pie('性别统计',name_list,num_list)
+    get_pie('wx性别统计',name_list,num_list)
 
     #省份前15
     name_list,num_list = counter2list(Province_counter.most_common(15))
-    get_bar('地区统计',name_list,num_list)
+    get_bar('wx好友地区统计',name_list,num_list)
 
     #地图
-    get_map('微信好友地图可视化',name_list,num_list)
+    get_map('微信好友地图分布',name_list,num_list)
 
     #昵称
     num_list = [5 for i in range(1,len(NickName_list)+1)]
